@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="primary">#636463</color>
+    <color name="secondary">#8E8E8E</color>
+    <color name="primary2">#7B7C7B</color>
+    <color name="logoLight">#FFE4E7</color>
+    <color name="logoMid">#FFCECD</color>
+    <color name="logoDark">#EAC7BD</color>
+    <color name="banners">#F2D4D6</color>
+    <color name="background">#FAF9FA</color>
+
+
+
+
+
+
+
+
+
+
+</resources>

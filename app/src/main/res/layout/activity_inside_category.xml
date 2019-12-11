@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true"
+    tools:context=".inside_category">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:titleTextColor="@android:color/white"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        android:background="@drawable/toolbar_style">
+
+    <!--        app:titleTextAppearance="@style/Toolbar.TitleText"-->
+    </androidx.appcompat.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/listViewTerms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
+
+
+</RelativeLayout>

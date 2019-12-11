@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_noNeed"
+    android:background="@drawable/background">
+
+    <!--   This is the old version of the UI (constraint layout).   -->
+
+
+
+    <ImageView
+        android:id="@+id/imageViewMiniLogo"
+        android:layout_width="500dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/logo_mini" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginLeft="173dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="@font/stcarb"
+        android:text="أهلا بك عزيزتي.. نورتينا!"
+        android:textColor="@color/primary"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWelcome2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMiniLogo" />
+
+    <TextView
+        android:id="@+id/textViewWelcome2"
+        android:layout_width="407dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:fontFamily="@font/stcarb"
+        android:text="كل ماتريدين معرفته عن مصطلحات الملابس تجدينه هنا"
+        android:textColor="@color/secondary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome" />
+
+
+    <ImageView
+        android:id="@+id/imageView_drawing_design_category"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome2"
+        app:srcCompat="@drawable/drawing_design_category" />
+
+
+    <ImageView
+        android:id="@+id/imageView_tailoring_knitting_tools"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome2"
+        app:srcCompat="@drawable/tailoring_knitting_tools" />
+
+    <ImageView
+        android:id="@+id/imageView_sewing_machaine_category"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_tailoring_knitting_tools"
+        app:srcCompat="@drawable/sewing_machaine_category" />
+
+    <ImageView
+        android:id="@+id/imageView_clothing_fabrics_category"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_drawing_design_category"
+        app:srcCompat="@drawable/clothing_fabrics_category" />
+
+    <ImageView
+        android:id="@+id/imageView_generals_category"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_clothing_fabrics_category"
+        app:srcCompat="@drawable/generals_category" />
+
+    <ScrollView
+        android:layout_width="23dp"
+        android:layout_height="700dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMiniLogo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

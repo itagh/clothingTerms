@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:fitsSystemWindows="true"
-    tools:context=".inside_category">
+    tools:context=".MotherList">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,17 +15,12 @@
         app:titleTextAppearance="@style/Toolbar.TitleText"
         android:background="@drawable/toolbar_style">
 
-    <!--        app:titleTextAppearance="@style/Toolbar.TitleText"-->
+        <!--        app:titleTextAppearance="@style/Toolbar.TitleText"-->
     </androidx.appcompat.widget.Toolbar>
 
     <ListView
         android:id="@+id/listViewTerms"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-
-
-        />
-
-
+        android:layout_below="@+id/toolbar" />
 </RelativeLayout>

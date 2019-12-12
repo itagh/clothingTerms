@@ -35,6 +35,7 @@ public class inside_category extends AppCompatActivity {
     ListView listViewTerms;
     DatabaseReference TermsDB ;
     String Ref = "";
+    String prev = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,23 +61,28 @@ public class inside_category extends AppCompatActivity {
             toolbar.setTitle("المصطلحات الخاصة بالرسم والتصميم");
             TermsDB = FirebaseDatabase.getInstance().getReference().child("Terms_of_Drawing");
             Ref = "Terms_of_Drawing";
+            prev = "Term_id_20";
         }
         if(category_number ==2) {
             toolbar.setTitle("مصطلحات أدوات التفصيل والحياكة");
             TermsDB = FirebaseDatabase.getInstance().getReference().child("Terms_of_Knitting_and_Tailoring");
             Ref = "Terms_of_Knitting_and_Tailoring";
+            prev = "Term_id_10";
         }
         if(category_number ==3) {
             toolbar.setTitle("مصطلحات أقمشة الملابس");
             TermsDB = FirebaseDatabase.getInstance().getReference().child("Terms_of_Clothing_Fabrics");
+            prev = "Term_id_30";
         }
         if(category_number ==4) {
             toolbar.setTitle("مصطلحات ماكينة الخياطة");
             TermsDB = FirebaseDatabase.getInstance().getReference().child("Terms_of_Sewing_Machine");
+            prev = "Term_id_40";
         }
         if(category_number ==5) {
             toolbar.setTitle("المصطلحات العامة للملابس");
             TermsDB = FirebaseDatabase.getInstance().getReference().child("Terms_Generals");
+            prev = "Term_id_50";
         }
 
 
@@ -99,7 +105,7 @@ public class inside_category extends AppCompatActivity {
 
 
 
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.font_color, list);
                 listViewTerms.setAdapter(arrayAdapter);
 
                 listViewTerms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -107,36 +113,13 @@ public class inside_category extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                         int index = position+1;
                         String idd = Integer.toString(index);
-                        String prev = "";
-                        switch(category_number){
-                            case 1:
-                                prev = "Term_id_20";
-                                break;
-
-                            case 2:
-                                prev = "Term_id_10";
-                                break;
-
-                            case 3:
-                                prev = "Term_id_30";
-                                break;
-
-                            case 4:
-                                prev = "Term_id_40";
-                                break;
-
-                            case 5:
-                                prev = "Term_id_50";
-                                break;
-                        }
-
-                       //
                         String completeRef = Ref+"/"+prev+idd;
+                        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + idd);
+                        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + completeRef);
                        // TermsDB = FirebaseDatabase.getInstance().getReference().child(ss[0]).child(ss[1]);
                         Intent intent = new Intent(inside_category.this, details.class);
                         char [] a = completeRef.toCharArray();
-                        intent.putExtra("db", a);
-
+                        intent.putExtra("db", completeRef);
                         startActivity(intent);
                     }
                 });

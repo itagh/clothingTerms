@@ -7,7 +7,7 @@
     tools:context=".MotherList">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbar2"
         android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -19,8 +19,8 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ListView
-        android:id="@+id/listViewTerms"
+        android:id="@+id/listViewTerms2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar2" />
 </RelativeLayout>

@@ -97,6 +97,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "671856231007-2u7kgmthrqe1q4mi03pbo3l8j3ivau76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nouf.projects.clothingtermsdesign",
+            "certificate_hash": "7c7141d6d92a92aabfdb8237cecc21e4d37b201f"
+          }
+        },
+        {
           "client_id": "671856231007-jlipmuv35v59ond5pfmeo6hpimtpj08l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

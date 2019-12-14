@@ -38,7 +38,7 @@ public class details extends AppCompatActivity {
 
         //String completeRef =
         //String [] ss = completeRef.split("/");
-
+        termsList = new ArrayList<>();
     }
 
 
@@ -47,15 +47,9 @@ public class details extends AppCompatActivity {
         super.onStart();
         Intent intent = getIntent();
         String ref = getIntent().getExtras().getString("db", "defaultValue");
-        // String complete = "nxcnn";
-        // char [] completeRef = intent.getCharArrayExtra(complete);
-        // String aa = "";
-        // String string = new String(completeRef);
-        //System.out.println(string);
-        //completeRef.toString();
-        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + ref);
         TermsDB = FirebaseDatabase.getInstance().getReference().child(ref);
         Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB);
+
 
         // completeRef = intent.getIntExtra.("", completeRef);
         TermsDB.addValueEventListener(new ValueEventListener() {
@@ -64,28 +58,24 @@ public class details extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), String.valueOf(dataSnapshot.getChildrenCount()), Toast.LENGTH_LONG).show();
                 String counter = String.valueOf(dataSnapshot.getChildrenCount());
 
-                if (counter != "0") { // no children
-                    Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + "m a single");
                     //ArrayList<String> list = new ArrayList<>();
                    // List<String> key1 = new ArrayList<>();
-                   // termsList.clear();
-                    for (DataSnapshot detailsSnapshot : dataSnapshot.getChildren()) {
-                        String at = detailsSnapshot.child("arterm").getValue(String.class);
-                        String ad = detailsSnapshot.child("ardef").getValue(String.class);
-                        String et = detailsSnapshot.child("enterm").getValue(String.class);
-                        String ed = detailsSnapshot.child("endef").getValue(String.class);
+                     termsList.clear();
+                    // (DataSnapshot detailsSnapshot : dataSnapshot.getChildren()) {
+                       String at = dataSnapshot.child("arterm").getValue(String.class);
+                        String ad = dataSnapshot.child("ardef").getValue(String.class);
+                        String et = dataSnapshot.child("enterm").getValue(String.class);
+                        String ed = dataSnapshot.child("endef").getValue(String.class);
                         // Log.d("test", "" + at +" "+ad + " "+ et+" "+ed);
                         Log.d("",at + " " + ad + " " + et + " " + ed);
                         //Log.d("test", "" + list);
                        // array_list = new ArrayList<>(list);
-                       /* textView_arb_term.setText(at);
+                        textView_arb_term.setText(at);
                         textView_arb_def.setText(ad);
                         textView_eng_term.setText(et);
-                        textView_eng_def.setText(ed);*/
-                    }
-                } else {
-                    Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + "I'm a mother");
-                }
+                        textView_eng_def.setText(ed);
+                   // }
+
 
 
             }

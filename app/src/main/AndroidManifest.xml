@@ -18,9 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".details" />
-        <activity android:name=".categoryActivity_noNeed" />
         <activity android:name=".launchingActivity" />
-        <activity android:name=".MainActivity_noNeed" />
         <activity
             android:name=".inside_category"
             android:parentActivityName=".Main2Activity" />

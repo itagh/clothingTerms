@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 public class launchingActivity extends AppCompatActivity {
 
+
     private final int SPLASH_DISPLAY_LENGTH = 2000;
     ImageView imageViewLogo;
 
@@ -21,15 +22,12 @@ public class launchingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launching);
 
 
-        new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent i = new Intent(launchingActivity.this, Main2Activity.class);
-                launchingActivity.this.startActivity(i);
-                launchingActivity.this.finish();
-            }
-
-            private void finish() {
+                Intent i = new Intent (launchingActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

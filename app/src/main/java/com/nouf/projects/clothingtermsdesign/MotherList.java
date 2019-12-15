@@ -31,11 +31,6 @@ public class MotherList extends AppCompatActivity {
     ArrayList<String> array_key;
     ListView listViewTerms;
     DatabaseReference TermsDB;
-    String Ref = "";
-    String prev = "";
-    String prev2 = "";
-    String Types = "";
-    String idd = "";
     String position = "";
     String completeRef = "";
 
@@ -86,7 +81,7 @@ public class MotherList extends AppCompatActivity {
                     list.add(term);
                     array_key = new ArrayList<>(list);
                 }
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.font_color, list);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.listview_custom, list);
                 listViewTerms.setAdapter(arrayAdapter);
 
                 listViewTerms.setOnItemClickListener(new AdapterView.OnItemClickListener() {

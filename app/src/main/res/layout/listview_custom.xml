@@ -4,8 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_below="@+id/toolbar"
-    android:textColor="#6f6364"
+    android:textColor="#636463"
+    android:textSize="20dp"
+    android:fontFamily="@font/helveticaneueroman"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
     />
-
-
 

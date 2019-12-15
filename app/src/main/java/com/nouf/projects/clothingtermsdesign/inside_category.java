@@ -123,7 +123,7 @@ public class inside_category extends AppCompatActivity {
                     list.add(term);
                     array_key = new ArrayList<>(list);
                 }
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.font_color, list);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.listview_custom, list);
                 listViewTerms.setAdapter(arrayAdapter);
                 listViewTerms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -144,7 +144,7 @@ public class inside_category extends AppCompatActivity {
                             Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + "count == 1");
 
 
-                            if (counterPrerv == 5) { // no children
+                            if (counterPrerv == 6) { // no children
                                 Intent intent = new Intent(inside_category.this, details.class);
                                 intent.putExtra("db", completeRef);
                                 startActivity(intent);
@@ -163,7 +163,7 @@ public class inside_category extends AppCompatActivity {
                             completeRef = Ref + "/" + prev2 + idd;
                             String T = Types2+idd;
                             //Log.d(" ", "gggggggggg!!!!g!!!!!!!!" +  completeRef);
-                            if (counterPrev2 == 5) { // no children
+                            if (counterPrev2 == 6) { // no children
                                 Intent intent = new Intent(inside_category.this, details.class);
                                 intent.putExtra("db", completeRef);
                                 startActivity(intent);

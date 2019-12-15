@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,32 +9,41 @@
     android:background="@drawable/background">
 
 
-
     <ImageView
         android:id="@+id/imageViewMiniLogo_details"
-        android:layout_width="500dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="50dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
         app:srcCompat="@drawable/logo_mini" />
+
+
+
 
     <ImageView
         android:id="@+id/imageViewTerm"
         android:layout_width="411dp"
         android:layout_height="185dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMiniLogo_details"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:layout_below="@+id/imageViewMiniLogo_details"
 
+
+         />
+
+
+    <Button
+        android:id="@+id/vid_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="30dp"
+        android:text="Play video"
+        tools:layout_editor_absoluteX="23dp"
+        android:layout_below="@+id/imageViewTerm"
+        />
     <TextView
         android:id="@+id/textView_arb_term"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -41,11 +51,12 @@
         android:fontFamily="@font/helveticaneuebold"
         android:textColor="@color/primary"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewTerm" />
+        android:layout_below="@+id/imageViewTerm" />
+
 
     <TextView
         android:id="@+id/textView_arb_def"
+        android:layout_alignParentRight="true"
         android:layout_width="381dp"
         android:layout_height="77dp"
         android:layout_marginStart="10dp"
@@ -54,13 +65,11 @@
         android:fontFamily="@font/helveticaneueroman"
         android:textColor="@color/secondary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_arb_term" />
-
+        android:layout_below="@+id/textView_arb_term" />
 
     <TextView
         android:id="@+id/textView_eng_term"
+        android:layout_alignParentLeft="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -68,22 +77,21 @@
         android:fontFamily="@font/georgiabold"
         android:textColor="@color/primary"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_arb_def" />
+        android:layout_below="@+id/textView_arb_def" />
 
     <TextView
         android:id="@+id/textView_eng_def"
-        android:layout_width="356dp"
-        android:layout_height="0dp"
+        android:layout_width="381dp"
+        android:layout_height="77dp"
+        android:layout_below="@+id/textView_eng_term"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="26dp"
         android:fontFamily="@font/georgia"
         android:textColor="@color/secondary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_eng_term" />
+        android:textSize="18sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

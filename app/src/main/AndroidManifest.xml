@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".videoPlayer"></activity>
-        <activity android:name=".details_sewing_machines" />
-        <activity android:name=".MotherList" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".details" />
+        <activity android:name=".videoPlayer" />
+        <activity android:name=".terms_list_mother"></activity>
+        <activity android:name=".terms_list" />
+        <activity android:name=".details2" />
+        <activity android:name=".Main2Activity">
+        </activity>
         <activity android:name=".launchingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".machine_list" />
+        <activity android:name=".MotherList" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".details" />
         <activity
             android:name=".inside_category"
             android:parentActivityName=".MainActivity" />

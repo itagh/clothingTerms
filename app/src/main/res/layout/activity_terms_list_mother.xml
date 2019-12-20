@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_new"
+    tools:context=".terms_list_mother">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView_logo_list_mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            app:srcCompat="@drawable/mini_logo_new" />
+
+
+        <ImageView
+            android:id="@+id/mtoolbar_mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_logo_list_mother"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/toolbar" />
+
+        <TextView
+            android:id="@+id/toolbar_text_mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mtoolbar_mother"
+            android:layout_alignTop="@id/mtoolbar_mother"
+            android:layout_alignRight="@id/mtoolbar_mother"
+            android:layout_alignBottom="@id/mtoolbar_mother"
+            android:fontFamily="@font/helveticaneuebold"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FCFCFC"
+            android:textSize="18dp" />
+
+        <ListView
+            android:id="@+id/list_mother"
+            android:layout_width="372dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mtoolbar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

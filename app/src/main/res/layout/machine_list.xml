@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="right"
+    android:padding="10dp">
+
+
+    <TextView
+
+        android:id="@+id/machine_arb"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/helveticaneueroman"
+        android:gravity="center"
+        android:text="ماكينة سنجر"
+        android:textColor="@color/primary"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/machine_slash"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/machine_arb"
+        android:layout_toLeftOf="@id/machine_arb"
+        android:fontFamily="@font/georgia"
+        android:gravity="center"
+        android:text=" / "
+        android:textColor="@color/primary"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/machine_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/machine_arb"
+        android:layout_toLeftOf="@id/machine_slash"
+        android:fontFamily="@font/georgia"
+        android:gravity="center"
+        android:text="Singer"
+        android:textColor="@color/primary"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/machine_image"
+        android:layout_width="122dp"
+        android:layout_height="95dp"
+        android:layout_below="@+id/machine_arb"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp" />
+
+
+    <ImageButton
+        android:id="@+id/play_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/machine_eng"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="45dp"
+        android:background="#00FFFFFF"
+        android:scaleType="center"
+        app:srcCompat="@drawable/play_sign" />
+
+
+</RelativeLayout>

@@ -114,9 +114,12 @@ public class inside_category extends AppCompatActivity {
         TermsDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+
                 ArrayList<String> list = new ArrayList<>();
                 List<String> key = new ArrayList<>();
+
                 termlist.clear();
+
                 for (DataSnapshot termsSnapshot : dataSnapshot.getChildren()) {
                     String term = termsSnapshot.child("arterm").getValue(String.class);
                     //String term2 = termsSnapshot.child("Term_id_101").child("arterm").getValue(String.class);
@@ -125,6 +128,7 @@ public class inside_category extends AppCompatActivity {
                 }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.listview_custom, list);
                 listViewTerms.setAdapter(arrayAdapter);
+
                 listViewTerms.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -135,11 +139,12 @@ public class inside_category extends AppCompatActivity {
                             // num = num/10
                             num /= 10;
                             ++count;
+
                         }
+                        idd = Integer.toString(index);
                         long counterPrerv = dataSnapshot.child(prev + idd).getChildrenCount();
                         long counterPrev2 = dataSnapshot.child(prev2 + idd).getChildrenCount();
                         if (count == 1) {
-                            idd = Integer.toString(index);
                             completeRef = Ref + "/" + prev + idd;
                             Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + "count == 1");
 
@@ -154,12 +159,11 @@ public class inside_category extends AppCompatActivity {
                                 String T = Types+idd;
                                 Intent intent = new Intent(inside_category.this, MotherList.class);
                                 intent.putExtra("db", completeRef);
-                                intent.putExtra("Types",T);
+                                intent.putExtra("type_id",T);
                                 startActivity(intent);
                             }
 
                         } else {
-                            idd = Integer.toString(index);
                             completeRef = Ref + "/" + prev2 + idd;
                             String T = Types2+idd;
                             //Log.d(" ", "gggggggggg!!!!g!!!!!!!!" +  completeRef);
@@ -171,7 +175,7 @@ public class inside_category extends AppCompatActivity {
                             } else if (counterPrev2 == 2) {
                                 Intent intent = new Intent(inside_category.this, MotherList.class);
                                 intent.putExtra("db", completeRef);
-                                intent.putExtra("Types",T);
+                                intent.putExtra("type_id",T);
                                 startActivity(intent);
                             }
                         }

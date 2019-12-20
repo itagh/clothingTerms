@@ -27,8 +27,6 @@ public class videoPlayer extends AppCompatActivity {
         link = getIntent().getExtras().getString("URL", "defaultValue");
         Log.d("test","Link inside video player " +link);
 
-
-
         uri = Uri.parse(link);
         Log.d("test","URI inside video player " +uri);
         video.setVideoURI(uri);
@@ -36,4 +34,5 @@ public class videoPlayer extends AppCompatActivity {
 
 
     }
+
 }

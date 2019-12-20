@@ -57,7 +57,7 @@ public class MotherList extends AppCompatActivity {
         super.onStart();
         Intent intent = getIntent();
         final String ref = getIntent().getExtras().getString("db", "defaultValue");
-        final String T = getIntent().getExtras().getString("Types", "defaultValue");
+        final String T = getIntent().getExtras().getString("type_id", "defaultValue");
         Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + ref);
         Log.d(" ", "TTTTTTT!!!!g!!!!!!!!" + T);
         TermsDB = FirebaseDatabase.getInstance().getReference().child(ref);
@@ -94,7 +94,7 @@ public class MotherList extends AppCompatActivity {
 
                         Intent intent = new Intent(MotherList.this, details.class);
                         intent.putExtra("db", completeRef);
-                       // Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + dataSnapshot.child(prev + idd).child(Types + idd).getChildrenCount());
+                       // Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + dataSnapshot.child(prev + positionPlus1).child(type_id + positionPlus1).getChildrenCount());
                         Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + completeRef);
                         startActivity(intent);
                     }

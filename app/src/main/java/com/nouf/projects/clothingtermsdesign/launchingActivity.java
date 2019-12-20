@@ -22,10 +22,10 @@ public class launchingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launching);
 
 
-        new Handler().postDelayed(new Runnable(){
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent (launchingActivity.this, MainActivity.class);
+                Intent i = new Intent(launchingActivity.this, Main2Activity.class);
                 startActivity(i);
                 finish();
             }

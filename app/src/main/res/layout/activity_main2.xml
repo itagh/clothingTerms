@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_new"
+    tools:context=".Main2Activity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView_mini_logo_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            app:srcCompat="@drawable/mini_logo_new" />
+
+
+        <TextView
+            android:id="@+id/textView_welcome_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView_mini_logo_1"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/"
+            android:text="أهلا بك عزيزتي.. نورتينا!"
+            android:textColor="@color/primary2"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView_welcome2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_welcome_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/helveticaneueroman"
+            android:text="كل ماتريدين معرفته عن مصطلحات الملابس تجدينه هنا.."
+            android:textColor="@color/secondary"
+            android:textSize="15sp" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_category_1_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView_welcome2_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/large1" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton_category_2_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageButton_category_1_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/large2" />
+
+        <ImageButton
+            android:id="@+id/imageButton_category_3_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageButton_category_2_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/large3" />
+
+        <ImageButton
+            android:id="@+id/imageButton_category_4_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageButton_category_3_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/large4" />
+
+        <ImageButton
+            android:id="@+id/imageButton_category_5_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageButton_category_4_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            android:scaleType="center"
+            app:srcCompat="@drawable/large5" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

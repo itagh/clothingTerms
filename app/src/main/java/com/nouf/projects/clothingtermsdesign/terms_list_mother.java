@@ -47,7 +47,7 @@ public class terms_list_mother extends AppCompatActivity {
         setContentView(R.layout.activity_terms_list_mother);
 
         mtoolbar = (ImageView) findViewById(R.id.mtoolbar);
-        toolbar_text = (TextView) findViewById(R.id.toolbar_text);
+        toolbar_text = (TextView) findViewById(R.id.toolbar_text_mother);
         listViewTerms = (ListView) findViewById(R.id.list_mother);
         termlist = new ArrayList<>();
         array_list = new ArrayList<>();
@@ -100,7 +100,7 @@ public class terms_list_mother extends AppCompatActivity {
 
                         if(openActivity) {
                             Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + "true!!!!!!!!!!");
-                            intent = new Intent(terms_list_mother.this, details2.class);
+                            intent = new Intent(terms_list_mother.this, machine_list.class);
                             intent.putExtra("type_id", type);
 
                         }else {

@@ -37,8 +37,8 @@ public class machine_list extends AppCompatActivity {
     String Link = "";
     DatabaseReference TermsDB;
 
-    String[] arabic_term;
-    String[] english_term;
+    String arabic_term;
+    String english_term;
     Integer[] imgid;
 
 
@@ -52,6 +52,9 @@ public class machine_list extends AppCompatActivity {
     ImageView machine_image;
     TextView machine_eng;
     TextView machine_arb;
+
+
+    String imageUri = "hello";
 
     //  ArrayList<String> array_list;
 
@@ -103,10 +106,17 @@ public class machine_list extends AppCompatActivity {
 
 
                     Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + dataSnapshot.child(type).getChildren() + "these are children");
-                    String arabic_term = termsSnapshot.child("arterm").getValue(String.class);
-                    String english_term = termsSnapshot.child("enterm").getValue(String.class);
-                    String imageUri = dataSnapshot.child("image").getValue(String.class);
+                     arabic_term = termsSnapshot.child("arterm").getValue(String.class);
+                     english_term= termsSnapshot.child("enterm").getValue(String.class);
+                     imageUri = dataSnapshot.child("image").getValue(String.class);
                     Link = dataSnapshot.child("video").getValue(String.class);
+
+
+                    Log.d("Print", "the arabic term" + arabic_term );
+                    Log.d("Print", "the english term" + english_term );
+                    Log.d("Print", "the img uri" + imageUri );
+                    Log.d("Print", "the video link" + Link );
+
 
 
                     Picasso.get().load(imageUri).into(machine_image);

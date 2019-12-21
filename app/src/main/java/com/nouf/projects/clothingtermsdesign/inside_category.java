@@ -122,6 +122,8 @@ public class inside_category extends AppCompatActivity {
 
                 for (DataSnapshot termsSnapshot : dataSnapshot.getChildren()) {
                     String term = termsSnapshot.child("arterm").getValue(String.class);
+                    Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + term);
+
                     //String term2 = termsSnapshot.child("Term_id_101").child("arterm").getValue(String.class);
                     list.add(term);
                     array_key = new ArrayList<>(list);

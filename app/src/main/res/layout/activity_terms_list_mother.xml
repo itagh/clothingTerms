@@ -17,10 +17,11 @@
             android:id="@+id/imageView_logo_list_mother"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:paddingLeft="40dp"
-            android:paddingTop="20dp"
-            app:srcCompat="@drawable/mini_logo_new" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/mini_logo_new"
+            android:contentDescription="mini logo"/>
 
 
         <ImageView
@@ -35,7 +36,7 @@
         <TextView
             android:id="@+id/toolbar_text_mother"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignLeft="@id/mtoolbar_mother"
             android:layout_alignTop="@id/mtoolbar_mother"
             android:layout_alignRight="@id/mtoolbar_mother"
@@ -49,10 +50,24 @@
         <ListView
             android:id="@+id/list_mother"
             android:layout_width="372dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/mtoolbar"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/mtoolbar_mother"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="20dp" />
+
+        <ImageButton
+            android:id="@+id/back_btn_mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/mtoolbar_mother"
+            android:layout_alignRight="@id/mtoolbar_mother"
+            android:layout_alignBottom="@id/mtoolbar_mother"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="@id/mtoolbar_mother"
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:scaleType="center"
+            app:srcCompat="@drawable/back" />
 
 
     </RelativeLayout>

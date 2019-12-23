@@ -2,6 +2,8 @@ package com.nouf.projects.clothingtermsdesign;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,33 +31,28 @@ import java.util.List;
 public class machine_list extends AppCompatActivity {
 
 
-    List<Terms> termlist;
+   /* List<Terms> termlist;
     ArrayList<String> array_list;
-    ArrayAdapter arrayAdapter;
 
     ArrayList<String> array_key;
-    ListView listViewTerms;
+    ListView listViewTerms;*/
     String Link = "";
     DatabaseReference TermsDB;
 
-    String arabic_term;
-    String english_term;
-    Integer[] imgid;
 
 
 
     ImageView mtoolbar_machine;
     TextView toolbar_text_machine;
-    ListView list_machine;
 
 
     ImageButton play_sign;
-    ImageView machine_image;
-    TextView machine_eng;
-    TextView machine_arb;
 
 
     String imageUri = "hello";
+    RecyclerView recyclerView;
+    ArrayList<machines> recycleList;
+    myAdapter adapter;
 
     //  ArrayList<String> array_list;
 
@@ -64,20 +62,27 @@ public class machine_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_sewing_machines);
 
+        Log.d(" ", "!!!!!!!!!! Deeeebbbuuuuuuug !!!!!!!!!"  + "hello machine_list class!!!!");
+
+
 
         mtoolbar_machine = (ImageView) findViewById(R.id.mtoolbar_machine);
         toolbar_text_machine = (TextView) findViewById(R.id.toolbar_text_machine);
-        list_machine = (ListView) findViewById(R.id.list_machine);
+       // list_machine = (ListView) findViewById(R.id.list_machine);
 
 
-        play_sign = (ImageButton) findViewById(R.id.play_sign);
-        machine_image = (ImageView) findViewById(R.id.machine_image);
-        machine_arb = (TextView) findViewById(R.id.machine_arb);
-        machine_eng = (TextView) findViewById(R.id.machine_eng);
+      //  play_sign = (ImageButton) findViewById(R.id.play_sign);
+       // machine_image = (ImageView) findViewById(R.id.machine_image);
+       // machine_arb = (TextView) findViewById(R.id.machine_arb);
+       // machine_eng = (TextView) findViewById(R.id.machine_eng);
 
 
-        termlist = new ArrayList<>();
-        array_list = new ArrayList<>();
+       // termlist = new ArrayList<>();
+       // array_list = new ArrayList<>();
+
+        recyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
+        recyclerView.setLayoutManager( new LinearLayoutManager(this));
+        recycleList = new ArrayList<machines>();
 
     }
 
@@ -100,11 +105,15 @@ public class machine_list extends AppCompatActivity {
                 toolbar_text_machine.setText(title);
 
 
-                ArrayList<String> list = new ArrayList<>();
-                termlist.clear();
+             /*   ArrayList<String> list = new ArrayList<>();
+                termlist.clear();*/
                 for (DataSnapshot termsSnapshot : dataSnapshot.child(type).getChildren()) {//حيسمع لانواع المكائن
 
 
+                    machines m = termsSnapshot.getValue(machines.class);
+                    recycleList.add(m);
+
+/*
                     Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + dataSnapshot.child(type).getChildren() + "these are children");
                      arabic_term = termsSnapshot.child("arterm").getValue(String.class);
                      english_term= termsSnapshot.child("enterm").getValue(String.class);
@@ -122,7 +131,7 @@ public class machine_list extends AppCompatActivity {
                     Picasso.get().load(imageUri).into(machine_image);
 
                     machine_arb.setText(arabic_term);
-                    machine_eng.setText(english_term);
+                    machine_eng.setText(english_term);*/
 
                     play_sign.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -133,12 +142,15 @@ public class machine_list extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
-                    array_key = new ArrayList<>(list);
+                  //  array_key = new ArrayList<>(list);
 
                 }
 
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.machine_list, list);
-                listViewTerms.setAdapter(arrayAdapter);
+                adapter = new myAdapter(machine_list.this, recycleList);
+                recyclerView.setAdapter(adapter);
+
+             /*   ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.machine_list, list);
+                listViewTerms.setAdapter(arrayAdapter);*/
 
 
             }

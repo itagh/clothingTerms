@@ -29,12 +29,16 @@ public class details2 extends AppCompatActivity {
     String Link = "";
     ImageView term_image;
     ImageButton play_btn;
+    ImageButton back_btn_details;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details2);
+
+       final Boolean activit_checker = getIntent().getExtras().getBoolean("activit_checker");
+
 
 
         textView_arb_term = (TextView) findViewById(R.id.textView_arb_term_1);
@@ -43,6 +47,23 @@ public class details2 extends AppCompatActivity {
         textView_eng_def = (TextView) findViewById(R.id.textView_eng_def_1);
         term_image = (ImageView) findViewById(R.id.term_image);
         play_btn = (ImageButton) findViewById(R.id.imageButton_play);
+        back_btn_details = (ImageButton) findViewById(R.id.back_btn_details);
+
+
+        back_btn_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                if (activit_checker) {
+                    intent = new Intent(details2.this, terms_list.class);
+                } else {
+                    intent = new Intent(details2.this, terms_list_mother.class);
+                }
+                startActivity(intent);
+
+            }
+        });
+
     }
 
 
@@ -51,6 +72,9 @@ public class details2 extends AppCompatActivity {
         super.onStart();
         Intent intent = getIntent();
         String ref = getIntent().getExtras().getString("mRef", "defaultValue");
+
+
+
         TermsDB = FirebaseDatabase.getInstance().getReference().child(ref);
         //   Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB);
 

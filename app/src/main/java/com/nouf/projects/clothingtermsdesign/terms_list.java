@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,10 +27,13 @@ public class terms_list extends AppCompatActivity {
 
     ImageView mtoolbar;
     TextView toolbar_text;
+    ImageButton back_btn;
+
 
     List<Terms> termlist;
     ArrayList<String> array_list;
-
+    String the_type = "";
+    String completeType = "";
     ArrayList<String> array_key;
     ListView listViewTerms;
     DatabaseReference TermsDB;
@@ -42,11 +46,11 @@ public class terms_list extends AppCompatActivity {
     String completeRef = "";
     boolean openActivity = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_list);
-
        /* toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(""); // Must to set Title null first.
         setSupportActionBar(toolbar); // Make toolbar act as ActionBar*/
@@ -59,6 +63,16 @@ public class terms_list extends AppCompatActivity {
         listViewTerms = (ListView) findViewById(R.id.list);
         termlist = new ArrayList<>();
         array_list = new ArrayList<>();
+
+
+       back_btn = (ImageButton) findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(terms_list.this, Main2Activity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -114,7 +128,7 @@ public class terms_list extends AppCompatActivity {
             type_id = "Types_of_id_50";
             type_id_2digits = "Types_of_id_5";
         }
-        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB);
+        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB + " URL URL URL URL URL");
 
         TermsDB.addValueEventListener(new ValueEventListener() {
             @Override
@@ -152,13 +166,15 @@ public class terms_list extends AppCompatActivity {
 
                             completeRef = category_name + "/" + term_id + positionPlus1;
 
-                            if (child_counter == 6) { // Single:
+                            if (child_counter == 5) { // Single:
                                 Intent intent = new Intent(terms_list.this, details2.class);
                                 intent.putExtra("mRef", completeRef);
+                                intent.putExtra("activit_checker", true);
                                 startActivity(intent);
 
                             } else if (child_counter == 2) { // Mother:
-                                String completeType = type_id + positionPlus1;
+                                completeType = type_id + positionPlus1; // types_of_id_10+0
+
                                 Intent intent = new Intent(terms_list.this, terms_list_mother.class);
                                 intent.putExtra("mRef", completeRef);
                                 intent.putExtra("type_id", completeType);
@@ -169,12 +185,13 @@ public class terms_list extends AppCompatActivity {
                         } else { //  counter with 2 or more digits:
 
                             completeRef = category_name + "/" + term_id_2digits + positionPlus1;
-                            String the_type = type_id_2digits + positionPlus1;
+                            the_type = type_id_2digits + positionPlus1;
 
                             //Log.d(" ", "gggggggggg!!!!g!!!!!!!!" +  completeRef);
-                            if (child_counter_2digit == 6) { // Single
+                            if (child_counter_2digit == 5 ) { // Single
                                 Intent intent = new Intent(terms_list.this, details2.class);
                                 intent.putExtra("mRef", completeRef);
+                                intent.putExtra("activit_checker", true);
                                 startActivity(intent);
 
                             } else if (child_counter_2digit == 2) { // Mother

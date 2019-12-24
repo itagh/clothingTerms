@@ -46,7 +46,7 @@ public class MotherList extends AppCompatActivity {
         setSupportActionBar(toolbar); // Make toolbar act as ActionBar
 
 
-        listViewTerms = (ListView) findViewById(R.id.listViewTerms2);
+        listViewTerms = (ListView) findViewById(R.id.listViewTerms3);
         termlist = new ArrayList<>();
         array_list = new ArrayList<>();
     }

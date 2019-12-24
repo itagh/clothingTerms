@@ -116,6 +116,7 @@ public class terms_list extends AppCompatActivity {
             category_name = "Terms_of_Sewing_Machine";
             term_id = "Term_id_40";
             type_id = "Types_of_id_40";
+            type_id_2digits = "Types_of_id_4";
             openActivity = true;
 
         }
@@ -128,8 +129,6 @@ public class terms_list extends AppCompatActivity {
             type_id = "Types_of_id_50";
             type_id_2digits = "Types_of_id_5";
         }
-        Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB + " URL URL URL URL URL");
-
         TermsDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
@@ -166,7 +165,7 @@ public class terms_list extends AppCompatActivity {
 
                             completeRef = category_name + "/" + term_id + positionPlus1;
 
-                            if (child_counter == 5) { // Single:
+                            if (child_counter == 6) { // Single:
                                 Intent intent = new Intent(terms_list.this, details2.class);
                                 intent.putExtra("mRef", completeRef);
                                 intent.putExtra("activit_checker", true);
@@ -180,6 +179,14 @@ public class terms_list extends AppCompatActivity {
                                 intent.putExtra("type_id", completeType);
                                 intent.putExtra("open_machine_list_activity", openActivity);
                                 startActivity(intent);
+
+                            } else if(child_counter == 7){
+                                completeType = type_id + positionPlus1;
+                                Intent intent = new Intent(terms_list.this, machine_list.class);
+                                intent.putExtra("mRef", completeRef);
+                                intent.putExtra("type_id", completeType);
+                                intent.putExtra("open_machine_list_activity", openActivity);
+                                startActivity(intent);
                             }
 
                         } else { //  counter with 2 or more digits:
@@ -188,7 +195,7 @@ public class terms_list extends AppCompatActivity {
                             the_type = type_id_2digits + positionPlus1;
 
                             //Log.d(" ", "gggggggggg!!!!g!!!!!!!!" +  completeRef);
-                            if (child_counter_2digit == 5 ) { // Single
+                            if (child_counter_2digit == 6 ) { // Single
                                 Intent intent = new Intent(terms_list.this, details2.class);
                                 intent.putExtra("mRef", completeRef);
                                 intent.putExtra("activit_checker", true);
@@ -199,6 +206,7 @@ public class terms_list extends AppCompatActivity {
                                 intent.putExtra("mRef", completeRef);
                                 intent.putExtra("type_id", the_type);
                                 startActivity(intent);
+
                             }
                         }
                     }

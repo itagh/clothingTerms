@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_new"
-    tools:context=".machine_list">
+    tools:context=".GrandsonMachine">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -150,11 +150,13 @@
             android:background="#00FFFFFF"
             android:scaleType="center"/>
 
-
         <ListView
-            android:id="@+id/listViewTerms3"
-            android:layout_width="185dp"
-            android:layout_height="131dp" />
+            android:id="@+id/Termlistview4"
+            android:layout_width="136dp"
+            android:layout_height="208dp"
+            android:layout_below="@id/textView_eng_def_2"
+            android:layout_marginTop="10dp"/>
+
 
     </RelativeLayout>
 

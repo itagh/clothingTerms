@@ -19,7 +19,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ListView
-        android:id="@+id/listViewTerms2"
+        android:id="@+id/listViewTerms3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar2" />

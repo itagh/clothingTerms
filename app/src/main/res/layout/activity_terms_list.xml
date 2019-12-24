@@ -47,7 +47,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/mtoolbar"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"/>
 
     <ImageButton
         android:id="@+id/back_btn"
@@ -56,7 +56,7 @@
         android:layout_alignTop="@id/mtoolbar"
         android:layout_alignRight="@id/mtoolbar"
         android:layout_alignBottom="@id/mtoolbar"
-        android:layout_marginLeft="@id/mtoolbar"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#00FFFFFF"
         android:gravity="center"

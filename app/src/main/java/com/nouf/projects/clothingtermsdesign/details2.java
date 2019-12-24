@@ -47,7 +47,7 @@ public class details2 extends AppCompatActivity {
         back_btn_details = (ImageButton) findViewById(R.id.back_btn_details);
 
 
-        back_btn_details.setOnClickListener(new View.OnClickListener() {
+       /* back_btn_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent;
@@ -59,7 +59,7 @@ public class details2 extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
 
     }
 
@@ -70,8 +70,9 @@ public class details2 extends AppCompatActivity {
         Intent intent = getIntent();
         String ref = getIntent().getExtras().getString("mRef", "defaultValue");
         String type_id = getIntent().getExtras().getString("type_id", "defaultValue");
+         Log.d(" ", "details 2" + ref +"    "+ type_id);
 
-        if(!type_id.isEmpty()){
+
             TermsDB = FirebaseDatabase.getInstance().getReference().child(ref);
             //   Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB);
 
@@ -117,52 +118,7 @@ public class details2 extends AppCompatActivity {
                 }
             });
 
-        } else {
-            TermsDB = FirebaseDatabase.getInstance().getReference().child(ref+"/"+type_id);
-             Log.d(" ", "gggggggggg!!!!g!!!!!!!!" + TermsDB);
 
-
-            TermsDB.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    //Toast.makeText(getApplicationContext(),
-                    // String.valueOf(dataSnapshot.getChildrenCount()), Toast.LENGTH_LONG).show();
-
-
-                    // (DataSnapshot detailsSnapshot : dataSnapshot.getChildren()) {
-                    String arabic_term = dataSnapshot.child("arterm").getValue(String.class);
-                    String arabic_definition = dataSnapshot.child("ardef").getValue(String.class);
-                    String english_term = dataSnapshot.child("enterm").getValue(String.class);
-                    String english_definition = dataSnapshot.child("endef").getValue(String.class);
-                    //String imageUri = dataSnapshot.child("image").getValue(String.class);
-                    // Link = dataSnapshot.child("video").getValue(String.class);
-
-
-                    // Picasso.get().load(imageUri).into(term_image);
-
-                    textView_arb_term.setText(arabic_term);
-                    textView_arb_def.setText(arabic_definition);
-                    textView_eng_term.setText(english_term);
-                    textView_eng_def.setText(english_definition);
-
-               /* play_btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d("Link inside Button", "" + Link);
-                        Intent intent = new Intent(details2.this, videoPlayer.class);
-                        intent.putExtra("URL", Link);
-                        startActivity(intent);
-                    }
-                });*/
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-        }
 
 
 

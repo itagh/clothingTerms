@@ -58,7 +58,7 @@ public class GrandsonMachine extends AppCompatActivity {
         completeType = getIntent().getExtras().getString("type_id", "defaultValue"); //Types_of_403/Types_of_403_2 from machine (2)
 
         grandsuntypes = getIntent().getExtras().getString("grand_id", "defaultValue");
-        Log.d(" ", "COMPLETE REF             " + completeRef + "       and COMPLETE TYPE " + completeType +"    grandsonType      "+grandsuntypes);
+        Log.d(" ", "COMPLETE REF             " + completeRef + "       and COMPLETE TYPE " + completeType + "    grandsonType      " + grandsuntypes);
         TermsDB = FirebaseDatabase.getInstance().getReference().child(completeRef + "/" + completeType);
         Log.d(" ", "Term Database is " + TermsDB);
         TermsDB.addValueEventListener(new ValueEventListener() {
@@ -92,20 +92,16 @@ public class GrandsonMachine extends AppCompatActivity {
                     }
                 });
                 Log.d(" ", "Data snapchot print" + TermsDB + "these are children");
-
                 ArrayList<String> list = new ArrayList<>();
-                //List<String> key = new ArrayList<>();
-                // termlist.clear();
-                for(DataSnapshot grandlist : dataSnapshot.getChildren()){
+                for (DataSnapshot grandlist : dataSnapshot.getChildren()) {
                     String arterm = grandlist.child("arterm").getValue(String.class);
                     list.add(arterm);
                     array_key = new ArrayList<>(list);
 
                 }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.listview_custom, list);
-
                 Termlistview3.setAdapter(arrayAdapter);
-                Log.d(" ", "listview3" + Termlistview3.getChildAt(0));
+                Log.d(" ", "listview3" + Termlistview3.getAdapter().getCount());
                 Termlistview3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -124,7 +120,6 @@ public class GrandsonMachine extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
